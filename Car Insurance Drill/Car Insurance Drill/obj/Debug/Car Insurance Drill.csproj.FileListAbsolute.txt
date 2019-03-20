@@ -1,0 +1,7 @@
+C:\Users\Matt\source\repos\Car Insurance Drill\Car Insurance Drill\bin\Debug\Car Insurance Drill.exe.config
+C:\Users\Matt\source\repos\Car Insurance Drill\Car Insurance Drill\bin\Debug\Car Insurance Drill.exe
+C:\Users\Matt\source\repos\Car Insurance Drill\Car Insurance Drill\bin\Debug\Car Insurance Drill.pdb
+C:\Users\Matt\source\repos\Car Insurance Drill\Car Insurance Drill\obj\Debug\Car Insurance Drill.csprojAssemblyReference.cache
+C:\Users\Matt\source\repos\Car Insurance Drill\Car Insurance Drill\obj\Debug\Car Insurance Drill.csproj.CoreCompileInputs.cache
+C:\Users\Matt\source\repos\Car Insurance Drill\Car Insurance Drill\obj\Debug\Car Insurance Drill.exe
+C:\Users\Matt\source\repos\Car Insurance Drill\Car Insurance Drill\obj\Debug\Car Insurance Drill.pdb

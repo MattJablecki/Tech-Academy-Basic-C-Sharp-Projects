@@ -1,0 +1,7 @@
+C:\Users\Matt\source\repos\Shipping Dept Drill\Shipping Dept Drill\bin\Debug\Shipping Dept Drill.exe.config
+C:\Users\Matt\source\repos\Shipping Dept Drill\Shipping Dept Drill\bin\Debug\Shipping Dept Drill.exe
+C:\Users\Matt\source\repos\Shipping Dept Drill\Shipping Dept Drill\bin\Debug\Shipping Dept Drill.pdb
+C:\Users\Matt\source\repos\Shipping Dept Drill\Shipping Dept Drill\obj\Debug\Shipping Dept Drill.csprojAssemblyReference.cache
+C:\Users\Matt\source\repos\Shipping Dept Drill\Shipping Dept Drill\obj\Debug\Shipping Dept Drill.csproj.CoreCompileInputs.cache
+C:\Users\Matt\source\repos\Shipping Dept Drill\Shipping Dept Drill\obj\Debug\Shipping Dept Drill.exe
+C:\Users\Matt\source\repos\Shipping Dept Drill\Shipping Dept Drill\obj\Debug\Shipping Dept Drill.pdb

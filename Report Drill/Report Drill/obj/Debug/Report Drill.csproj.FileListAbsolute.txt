@@ -1,0 +1,6 @@
+C:\Users\Matt\source\repos\Report Drill\Report Drill\bin\Debug\Report Drill.exe.config
+C:\Users\Matt\source\repos\Report Drill\Report Drill\bin\Debug\Report Drill.exe
+C:\Users\Matt\source\repos\Report Drill\Report Drill\bin\Debug\Report Drill.pdb
+C:\Users\Matt\source\repos\Report Drill\Report Drill\obj\Debug\Report Drill.csproj.CoreCompileInputs.cache
+C:\Users\Matt\source\repos\Report Drill\Report Drill\obj\Debug\Report Drill.exe
+C:\Users\Matt\source\repos\Report Drill\Report Drill\obj\Debug\Report Drill.pdb

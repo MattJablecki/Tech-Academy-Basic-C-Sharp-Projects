@@ -1,0 +1,7 @@
+C:\Users\Matt\source\repos\MathandComparison Drill\MathandComparison Drill\bin\Debug\MathandComparison Drill.exe.config
+C:\Users\Matt\source\repos\MathandComparison Drill\MathandComparison Drill\bin\Debug\MathandComparison Drill.exe
+C:\Users\Matt\source\repos\MathandComparison Drill\MathandComparison Drill\bin\Debug\MathandComparison Drill.pdb
+C:\Users\Matt\source\repos\MathandComparison Drill\MathandComparison Drill\obj\Debug\MathandComparison Drill.csprojAssemblyReference.cache
+C:\Users\Matt\source\repos\MathandComparison Drill\MathandComparison Drill\obj\Debug\MathandComparison Drill.csproj.CoreCompileInputs.cache
+C:\Users\Matt\source\repos\MathandComparison Drill\MathandComparison Drill\obj\Debug\MathandComparison Drill.exe
+C:\Users\Matt\source\repos\MathandComparison Drill\MathandComparison Drill\obj\Debug\MathandComparison Drill.pdb
