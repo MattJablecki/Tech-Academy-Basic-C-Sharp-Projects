@@ -8,10 +8,14 @@ namespace Classes
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             Console.WriteLine("Please insert a whole number.");
             int input = Convert.ToInt32(Console.ReadLine());
+            Methods.Multiply(input);
+            Methods.Add(input);
+            Methods.Subtract(input);
+            Console.ReadLine();
         }
-    }
+    }   
 }
