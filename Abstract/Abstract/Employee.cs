@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abstract
+namespace Interface
 {
-    class Employee : Person
-    {
-        
+    public class Employee : Person, IQuittable 
+    {    
+        public void Quit()
+        {
+            IQuittable quittable = new Employee();
+            Console.WriteLine("I QUIT!");
+            Console.ReadLine();
+        }
     }
 }

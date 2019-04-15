@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abstract
+namespace Interface
 {
     class Program
     {
@@ -14,6 +14,7 @@ namespace Abstract
             employee.FirstName = "Sample";
             employee.LastName = "Student";
             employee.SayName();
+            employee.Quit();
         }
     }
 }
