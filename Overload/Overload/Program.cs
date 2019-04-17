@@ -20,6 +20,7 @@ namespace Overload
             employee1.ID = 2;
             employee.SayName();
             employee1.SayName();
+            Console.WriteLine("");
             Console.ReadLine();
         }
     }
