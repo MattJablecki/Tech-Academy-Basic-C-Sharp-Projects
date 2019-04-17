@@ -8,22 +8,23 @@ namespace Overload
 {
     public class Employee : Person
     {
-        //public static Employee operator== (Employee employee, Employee employee1)
-        //{
-        //    if (employee.ID == employee1.ID)
-        //    {
-        //        Console.WriteLine("ID match.");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("ID does not match.");
-        //    }
+        public static bool operator ==(Employee employee, Employee employee1)
+        {
+            if (employee.ID == employee1.ID)
+            {
+                bool isEqual = true;
+                return isEqual;
+            }
+        }
+        public static bool operator !=(Employee employee, Employee employee1)
+        {
+            if (employee.ID != employee1.ID)
+            {
+                bool isNotEqual = true;
+                return isNotEqual;
+            }
 
-        //}
-        //public static Employee operator!= (Employee employee, Employee employee1)
-        //{
-            
-        //}
+        }
 
 
     }
