@@ -8,7 +8,7 @@ namespace Overload
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             Employee employee = new Employee();
             employee.FirstName = "Sample";
@@ -20,6 +20,7 @@ namespace Overload
             employee1.ID = 2;
             employee.SayName();
             employee1.SayName();
+            Console.ReadLine();
         }
     }
 }
