@@ -20,7 +20,8 @@ namespace Overload
             employee1.ID = 2;
             employee.SayName();
             employee1.SayName();
-            Console.WriteLine("");
+            Console.WriteLine("ID Match?");
+            Console.WriteLine(employee == employee1);
             Console.ReadLine();
         }
     }
