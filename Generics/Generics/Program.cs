@@ -26,6 +26,7 @@ namespace Generics
             {
                 Console.WriteLine(ID);
             }
+            Console.ReadLine();
         }
     }
 }
