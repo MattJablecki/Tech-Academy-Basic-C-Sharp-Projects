@@ -10,8 +10,10 @@ namespace Generics
     {
         public static void Main()
         {
-            Employee<String> employee = new Employee<String>();
-            
+            Employee<string> employee = new Employee<string> ();
+            employee.Things;
+            Employee<int> ID = new Employee<int>();
+            ID.Things;            
         }
     }
 }
