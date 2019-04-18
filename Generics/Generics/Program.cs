@@ -18,13 +18,13 @@ namespace Generics
             ID.Things.Add(1);
             ID.Things.Add(2);
             ID.Things.Add(3);
-            foreach (string employee in employee.Things)
+            foreach (string x in employee.Things)
             {
-                Console.WriteLine(employee);
+                Console.WriteLine(x);
             }
-            foreach (int ID in ID.Things)
+            foreach (int y in ID.Things)
             {
-                Console.WriteLine(ID);
+                Console.WriteLine(y);
             }
             Console.ReadLine();
         }
