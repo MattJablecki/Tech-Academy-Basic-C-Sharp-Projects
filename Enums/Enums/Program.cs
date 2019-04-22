@@ -20,22 +20,17 @@ namespace Enums
         }
         private static void Main()
         {
-            DateTime now = DateTime.Now;
-            string day = now.DayOfWeek.ToString();
             try
             {
-                Console.WriteLine("What day is it today?");
-                string guess = Console.ReadLine();
-                if (guess == day)
-                {
-                    Console.WriteLine("You got it!");
-                    Console.ReadLine();
-                }
-
+                Console.WriteLine("What day is it?");
+                string day = Console.ReadLine();
+                DayOfTheWeek dayOfTheWeek = (DayOfTheWeek)Enum.Parse(typeof(DayOfTheWeek), day);
+                Console.WriteLine("Nice.");
+                Console.ReadLine();
             }
             catch(Exception)
             {
-                Console.WriteLine("That is incorrect. Sorry :( ");
+                Console.WriteLine("That is invalid. Sorry :( ");
                 Console.ReadLine();
             }
 
