@@ -8,15 +8,7 @@ namespace Enums
 {
     class Program
     {
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("Please enter the current day of the week.");
-            string day = Console.ReadLine();
-            Enum.TryParse<DaysOfTheWeek>(day, out DaysOfTheWeek daysOfTheWeek);
-            Console.WriteLine("Yes, " + daysOfTheWeek + " is valid");
-            Console.ReadLine();
-        }
-        public enum DaysOfTheWeek
+        public enum DayOfTheWeek
         {
             Monday,
             Tuesday,
@@ -25,6 +17,29 @@ namespace Enums
             Friday,
             Saturday,
             Sunday
+        }
+        private static void Main()
+        {
+            DateTime now = DateTime.Now;
+            string day = now.DayOfWeek.ToString();
+            try
+            {
+                Console.WriteLine("What day is it today?");
+                string guess = Console.ReadLine();
+                if (guess == day)
+                {
+                    Console.WriteLine("You got it!");
+                    Console.ReadLine();
+                }
+
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("That is incorrect. Sorry :( ");
+                Console.ReadLine();
+            }
+
+
         }
     }
 }
