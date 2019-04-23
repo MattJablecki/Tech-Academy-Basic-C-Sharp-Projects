@@ -43,9 +43,9 @@ namespace Lambda
                 }
             }
 
-            List<Employee> joes = new List<Employee> joes.Add(x =>, Employee.FirstName("Joe"));
+            List<Employee> joes = employeesList.Where(x => x.FirstName == "Joe").ToList();
 
-            List<Employee> ids = new List<Employee> ids.Add(x =>, Employee.ID(id > 5));
+            List<Employee> ids = employeesList.Where(x => x.ID > 5).ToList();
 
         }
 
