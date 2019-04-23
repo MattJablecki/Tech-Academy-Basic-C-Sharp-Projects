@@ -8,7 +8,7 @@ namespace Lambda
 {
     public class Program
     {
-        static void Main()
+        public static void Main()
         {
             List<Employee> employeesList = new List<Employee>();
             employeesList.Add(new Employee()
@@ -32,7 +32,25 @@ namespace Lambda
             employeesList.Add(new Employee()
             { FirstName = "Jean", LastName = "Bobean", ID = 10 });
 
-            
+
+
+            foreach (var Employee in employeesList)
+            {
+                List<Employee> joeList = new List<Employee>();
+                if (Employee.FirstName == "Joe")
+                {
+                    joeList.Add(Employee);
+                }
+            }
+
+            List<Employee> joes = new List<Employee> joes.Add(x =>, Employee.FirstName("Joe"));
+
+            List<Employee> ids = new List<Employee> ids.Add(x =>, Employee.ID(id > 5));
+
         }
+
+        
+
+
     }
 }
