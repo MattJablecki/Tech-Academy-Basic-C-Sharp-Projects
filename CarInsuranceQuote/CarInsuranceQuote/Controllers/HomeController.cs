@@ -39,9 +39,70 @@ namespace CarInsuranceQuote.Controllers
             }
             else
             {
-               
-                string queryString = @"INSERT INTO Quotes(FirstName, LastName, EmailAddress, DateOfBirth, CarYear, CarMake, CarModel, Tickets, DUI, Coverage) VALUES
-                                        (@FirstName, @LastName, @EmailAddress, @DateOfBirth, @CarYear, @CarMake, @CarModel, @Tickets, @DUI, @Coverage)";
+                int initial = 50;
+                int age = DateTime.Now.Year - Convert.ToDateTime(dateOfBirth).Year;
+                if (age < 18)
+                {
+                    agePrice = 100;
+                }
+                if (age < 25 || age > 18)
+                {
+                    agePrice = 25;
+                }
+                if (age > 100)
+                {
+                    agePrice = 25;
+                }
+                else
+                {
+                    agePrice = 0;
+                }
+                int year = Convert.ToInt32(carYear);
+                if (year < 2000)
+                {
+                    yearPrice = 25;
+                }
+                if (year > 2015)
+                {
+                    yearPrice = 25;
+                }
+                else
+                {
+                    yearPrice = 0;
+                }
+                if (carMake == "Porsche" || carMake == "porsche")
+                {
+                    makePrice = 25;
+                }
+                else
+                {
+                    makePrice = 0;
+                }
+                if (carMake == "Porsche" || carMake == "porsche" && carModel == "911 Carrera" || carModel == "911 carrera")
+                {
+                    modelPrice = 25;
+                }
+                int ticketPrice = Convert.ToInt32(tickets) * 10;
+
+                int firstTotal = initial + agePrice + yearPrice + makePrice + modelPrice;
+
+                if (dUI == "yes")
+                {
+                    var duiPercent = firstTotal * .25;
+                }
+
+                var duiTotal = firstTotal + duiPercent;
+
+                if (coverage == "full")
+                {
+                    var coveragePercent = duiTotal * .5;
+                }
+
+                var coverageTotal = duiTotal + coveragePercent;
+                string Total = coverageTotal.ToString();
+
+                string queryString = @"INSERT INTO Quotes(FirstName, LastName, EmailAddress, DateOfBirth, CarYear, CarMake, CarModel, Tickets, DUI, Coverage, Quote) VALUES
+                                        (@FirstName, @LastName, @EmailAddress, @DateOfBirth, @CarYear, @CarMake, @CarModel, @Tickets, @DUI, @Coverage, @Total)";
 
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
@@ -56,6 +117,7 @@ namespace CarInsuranceQuote.Controllers
                     command.Parameters.Add("@Tickets", SqlDbType.Int);
                     command.Parameters.Add("@DUI", SqlDbType.VarChar);
                     command.Parameters.Add("@Coverage", SqlDbType.VarChar);
+                    command.Parameters.Add("@Total", SqlDbType.VarChar);
 
                     command.Parameters["@FirstName"].Value = firstName;
                     command.Parameters["@LastName"].Value = lastName;
@@ -67,70 +129,7 @@ namespace CarInsuranceQuote.Controllers
                     command.Parameters["@Tickets"].Value = tickets;
                     command.Parameters["@DUI"].Value = dUI;
                     command.Parameters["@Coverage"].Value = coverage;
-
-                    //int initial = 50;
-            
-
-                    //int age = DateTime.Now.Year - Convert.ToDateTime(dateOfBirth).Year;
-                    //if (age < 18)
-                    //{
-                    //    int agePrice = 100;                        
-                    //}
-                    //if (age < 25 || age > 18)
-                    //{
-                    //    int agePrice = 25;
-                    //}
-                    //if (age > 100)
-                    //{
-                    //    int agePrice = 25;
-                    //}
-                    //else
-                    //{
-                    //    int agePrice = 0;
-                    //}
-                    //int year = Convert.ToInt32(carYear);
-                    //if (year < 2000)
-                    //{
-                    //    int yearPrice = 25;
-                    //}
-                    //if (year > 2015)
-                    //{
-                    //    int yearPrice = 25;
-                    //}
-                    //else
-                    //{
-                    //    int yearPrice = 0;
-                    //}
-                    //if (carMake == "Porsche" || carMake == "porsche")
-                    //{
-                    //    int makePrice = 25;
-                    //}
-                    //else
-                    //{
-                    //    int makePrice = 0;
-                    //}
-                    //if (carMake == "Porsche" || carMake == "porsche" && carModel == "911 Carrera" || carModel == "911 carrera")
-                    //{
-                    //    int modelPrice = 25;
-                    //}
-                    //int ticketPrice = Convert.ToInt32(tickets) * 10;
-
-                    //int firstTotal = initial + agePrice + yearPrice + makePrice + modelPrice;
-
-                    //if (dUI == "yes")
-                    //{
-                    //    var duiPercent = firstTotal * .25;
-                    //}
-
-                    //var duiTotal = firstTotal + duiPercent;
-
-                    //if (coverage == "full")
-                    //{
-                    //    var coveragePercent = duiTotal * .5;
-                    //}
-
-                    //var coverageTotal = duiTotal + coveragePercent;
-
+                    command.Parameters["@Total"].Value = Total;
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -144,7 +143,7 @@ namespace CarInsuranceQuote.Controllers
 
         public ActionResult Admin()
         {
-            string queryString = @"SELECT Id, FirstName, LastName, EmailAddress, DateOfBirth, CarYear, CarMake, CarModel, Tickets, DUI, Coverage from Quotes";
+            string queryString = @"SELECT Id, FirstName, LastName, EmailAddress, DateOfBirth, CarYear, CarMake, CarModel, Tickets, DUI, Coverage, Quote from Quotes";
             List<Quote> quotes = new List<Quote>();
 
             using (SqlConnection connection = new SqlConnection(_connectionString))
