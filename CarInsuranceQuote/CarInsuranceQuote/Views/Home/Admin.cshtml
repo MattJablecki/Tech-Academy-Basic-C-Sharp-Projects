@@ -10,20 +10,21 @@
             @foreach (var quote in Model)
             {
              <div class="row">
-                 <div class="col">
+                 <div class="col-3 mb-3">
                      <h6>First Name</h6>
                      @quote.FirstName
                  </div>
-                 <div class="col">
+                 <div class="col-3 mb-3">
                      <h6>Last Name</h6>
                      @quote.LastName
                  </div>
-                 <div class="col">
+                 <div class="col-4 mb-3">
                      <h6>Email Address</h6>
                      @quote.EmailAddress
                  </div>
-                 <div class="col">
+                 <div class="col-2 mb-3">
                      <h6>Quote</h6>
+                     @quote.Total
                  </div>
              </div>
             }

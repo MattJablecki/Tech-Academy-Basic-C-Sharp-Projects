@@ -17,8 +17,8 @@ namespace CarInsuranceQuote.Controllers
         public int yearPrice { get; private set; }
         public int makePrice { get; private set; }
         public int modelPrice { get; private set; }
-        public int duiPercent { get; private set; }
-        public int coveragePercent { get; private set; }
+        public double duiPercent { get; private set; }
+        public double coveragePercent { get; private set; }
 
         public ActionResult Index()
         {
@@ -45,17 +45,13 @@ namespace CarInsuranceQuote.Controllers
                 {
                     agePrice = 100;
                 }
-                if (age < 25 || age > 18)
+                if (age < 25 && age > 18)
                 {
                     agePrice = 25;
                 }
                 if (age > 100)
                 {
                     agePrice = 25;
-                }
-                else
-                {
-                    agePrice = 0;
                 }
                 int year = Convert.ToInt32(carYear);
                 if (year < 2000)
@@ -66,17 +62,9 @@ namespace CarInsuranceQuote.Controllers
                 {
                     yearPrice = 25;
                 }
-                else
-                {
-                    yearPrice = 0;
-                }
                 if (carMake == "Porsche" || carMake == "porsche")
                 {
                     makePrice = 25;
-                }
-                else
-                {
-                    makePrice = 0;
                 }
                 if (carMake == "Porsche" || carMake == "porsche" && carModel == "911 Carrera" || carModel == "911 carrera")
                 {
@@ -84,22 +72,24 @@ namespace CarInsuranceQuote.Controllers
                 }
                 int ticketPrice = Convert.ToInt32(tickets) * 10;
 
-                int firstTotal = initial + agePrice + yearPrice + makePrice + modelPrice;
+                int firstTotal = initial + agePrice + yearPrice + makePrice + modelPrice + ticketPrice;
 
                 if (dUI == "yes")
                 {
-                    var duiPercent = firstTotal * .25;
+                    duiPercent = firstTotal * .25; 
                 }
 
-                var duiTotal = firstTotal + duiPercent;
+                double secondTotal = duiPercent + firstTotal;
 
-                if (coverage == "full")
+                if(coverage == "full")
                 {
-                    var coveragePercent = duiTotal * .5;
+                    coveragePercent = secondTotal * .5;
                 }
 
-                var coverageTotal = duiTotal + coveragePercent;
-                string Total = coverageTotal.ToString();
+                double finalTotal = secondTotal + coveragePercent;
+                double moneyTotal = Math.Truncate(finalTotal * 100) / 100;
+                string Total = moneyTotal.ToString();
+
 
                 string queryString = @"INSERT INTO Quotes(FirstName, LastName, EmailAddress, DateOfBirth, CarYear, CarMake, CarModel, Tickets, DUI, Coverage, Quote) VALUES
                                         (@FirstName, @LastName, @EmailAddress, @DateOfBirth, @CarYear, @CarMake, @CarModel, @Tickets, @DUI, @Coverage, @Total)";
@@ -167,6 +157,7 @@ namespace CarInsuranceQuote.Controllers
                     quote.Tickets = Convert.ToInt32(reader["Tickets"]);
                     quote.DUI = reader["DUI"].ToString();
                     quote.Coverage = reader["Coverage"].ToString();
+                    quote.Total = reader["Quote"].ToString();
                     quotes.Add(quote);
                 }
             }

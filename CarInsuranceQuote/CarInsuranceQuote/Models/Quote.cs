@@ -18,5 +18,6 @@ namespace CarInsuranceQuote.Models
         public string DUI { get; set; }
         public string Coverage { get; set; }
         public int Tickets { get; set; }
+        public string Total { get; set; }
     }
 }
