@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Knockout Demo</title>
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.3.1.js"></script>
     <script src="Scripts/jquery.tmpl.js"></script>
@@ -13,7 +14,12 @@
 <body>
     <form id="form1" runat="server">
     <div>
-            <div>
+        <div class="container bg-primary mb-5">
+            <div class="page-header text-center">
+                <h1>Tech Academy Inventory Management</h1>
+            </div>
+        </div>
+            <div class="ml-4 mb-4">
                 <p>Product Name: <input type="text" data-bind="value: productName" /></p>
                 <p>Price: <input type="text" data-bind="value: price" /></p>
                 <p>Quantity: <input type="text" data-bind="value: quantity" /></p>
@@ -48,7 +54,7 @@
             price: ko.observable(0),
             quantity: ko.observable(0),
             manufacturer: ko.observable("Manufacturer"),
-            products: ko.observableArray([new Product("Laptop", 1000, 3, "Apple"), new Product("Camcorder", 3000, 2, "Sony")]),
+            products: ko.observableArray([]),
             addProduct: function () {
                 vm.products.push(new Product(this.productName(), this.price(), this.quantity(), this.manufacturer()));
             }
