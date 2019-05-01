@@ -1,0 +1,29 @@
+﻿@using FeedEllie.Models
+@model List<Feedings>
+
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">Feedings</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var feeding in Model)
+            {
+                <div class="row">
+                    <div class="col-3">
+                        @feeding.FeedName
+                    </div>
+                    <div class="col-3">
+                        @feeding.FeedDate
+                    </div>
+                    <div class="col-3">
+                        @feeding.FeedTime
+                    </div>
+                    <div class="col-3">
+                        @feeding.Food
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@using FeedEllie.Models
+@model List<Naps>
+
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">Feedings</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var nap in Model)
+            {
+                <div class="row">
+                    <div class="col-2">
+                        @nap.NapName
+                    </div>
+                    <div class="col-2">
+                        @nap.NapDate
+                    </div>
+                    <div class="col-2">
+                        @nap.StartTime
+                    </div>
+                    <div class="col-2">
+                        @nap.EndTime
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
